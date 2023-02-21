@@ -19,5 +19,15 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch();
+
+        User u1 = new User("a", "a", 1, "a", 1212, "a", "a", "11");
+
+        System.out.println(u1);
+
     }
+
+
+
+
 }
+
