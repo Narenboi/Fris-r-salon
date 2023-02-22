@@ -23,17 +23,21 @@ public class LogInd {
     private Label welcomeText;
 
     public void LogindKnap(ActionEvent event) throws IOException {
-
-        root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (checkLogin == true) {
+            root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
         /*
         StageController.changeScene("hello-view.fxml");
+*/
+    }
 
+    private void checkLogin() throws IOException{
 
-         */
+        Main m = new Main();
 
     }
 
