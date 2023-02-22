@@ -26,6 +26,12 @@ public class Tidsbestilling {
     @FXML
     private CheckBox frisor5CheckBox;
 
+    @FXML
+    private DatePicker datePicker; // Declare the datePicker variable here
+
+    @FXML
+    private TextField nameField; // Declare the nameField variable here
+
     public void Vaelgfrioer(ActionEvent actionEvent) {
         if (frisor1CheckBox.isSelected()) {
             System.out.println("Du har valgt Frisør 1");
@@ -54,42 +60,12 @@ public class Tidsbestilling {
         System.out.println("Tidspunktet " + clickedButton.getText() + " er nu valgt."); // Udskriver en besked om, at tidspunktet er valgt
     }
 
-    public class DatePickerExample {
+    @FXML
+    private void handleBookButtonAction(ActionEvent event) {
+        LocalDate selectedDate = datePicker.getValue();
+        String name = nameField.getText();
+        // Her kan du indsætte koden til at bekræfte de tidligere valg
+        System.out.println("Reservation bekræftet for");
 
-        public static void main(String[] args) {
-
-            // Opret en ny date picker
-            DatePicker datePicker = new DatePicker();
-
-            // Sæt en default dato (valgfrit)
-            datePicker.setValue(LocalDate.now());
-
-            // Tilføj en change listener til at få den valgte dato
-            datePicker.setOnAction(event -> {
-                LocalDate date = datePicker.getValue();
-                System.out.println("Valgt dato: " + date);
-            });
-            @FXML
-            private Button bookButton;
-
-            @FXML
-            private DatePicker datePicker;
-
-            @FXML
-            private TextField nameField;
-
-            @FXML
-            private void handleBookButtonAction(ActionEvent event) {
-                LocalDate selectedDate = datePicker.getValue();
-                String name = nameField.getText();
-                // Her kan du indsætte koden til at bekræfte de tidligere valg
-                System.out.println("Reservation bekræftet for " + name + " på " + selectedDate);
-            }
-
-        }
     }
 }
-
-
-
-
