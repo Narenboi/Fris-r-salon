@@ -32,6 +32,9 @@ public class Tidsbestilling {
     @FXML
     private TextField nameField; // Declare the nameField variable here
 
+    public Tidsbestilling() {
+    }
+
     public void Vaelgfrioer(ActionEvent actionEvent) {
         if (frisor1CheckBox.isSelected()) {
             System.out.println("Du har valgt Frisør 1");
