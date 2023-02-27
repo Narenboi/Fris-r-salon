@@ -37,7 +37,7 @@ public class LogInd {
 
         if (username.getText().isBlank() == false && password.getText().isBlank() == false){
             LoginFailed.setText("logging in bitch!");
-            validateLogin();
+
         }else {
             LoginFailed.setText("You fucked up bitch, try again");
         }
@@ -51,26 +51,7 @@ public class LogInd {
 */
     }
 
-    public void validateLogin(){
-        Dbsql connectNow = new Dbsql();
-        Connection connectionDB = connectNow.getConnection();
-        String verifyLogin = "SELECT count(1) FROM UserAccounts WHERE username = '" + username.getText() + "' AND password = '" + password.getText() + "'";
-        try{
-            Statement statement = connectionDB.createStatement();
-            ResultSet queryResult = statement.executeQuery(verifyLogin);
 
-            while(queryResult()){
-                if (queryResult.getInt(1) ==1){
-                    LoginFailed.setText("Welcome!");
-
-                }else {
-                    LoginFailed.setText("Invalid login please try again.");
-                }
-            }
-        } catch (Exception e){
-                e.printStackTrace();
-        }
-    }
 
     private void checkLogin() throws IOException{
 

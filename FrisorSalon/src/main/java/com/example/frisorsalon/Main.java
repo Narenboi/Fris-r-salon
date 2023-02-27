@@ -13,7 +13,7 @@ public class Main extends Application {
     static Stage primaryStage = null;
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LogInd.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Tidsbestilling.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 500, 500);
         primaryStage.setTitle("Hello bitch!");
         primaryStage.setScene(scene);
@@ -40,6 +40,8 @@ public class Main extends Application {
         System.out.println(u1);
 
     }
+
+     */
 
 
 
