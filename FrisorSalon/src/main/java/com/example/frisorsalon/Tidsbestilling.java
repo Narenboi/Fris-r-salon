@@ -11,6 +11,7 @@ import java.time.LocalDate;
 
 public class Tidsbestilling {
 
+
     @FXML
     private CheckBox frisor1CheckBox;
 
@@ -71,4 +72,5 @@ public class Tidsbestilling {
         System.out.println("Reservation bekræftet for");
 
     }
+
 }

@@ -8,10 +8,26 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Main extends Application {
+
+
+    static Stage primaryStage = null;
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Tidsbestilling.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 500, 500);
+        primaryStage.setTitle("Hello bitch!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+}
+
+
+    /*
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("tidsbestilling.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 900, 900);
+
         stage.setTitle("Hello bitch!");
         stage.setScene(scene);
         stage.show();
@@ -24,5 +40,8 @@ public class Main extends Application {
         System.out.println(u1);
 
     }
-}
+
+     */
+
+
 
