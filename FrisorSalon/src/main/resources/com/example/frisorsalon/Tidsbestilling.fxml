@@ -1,53 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frisorsalon.Tidsbestilling">
+<AnchorPane prefHeight="422.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frisorsalon.Tidsbestilling">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="254.0" layoutY="37.0" prefHeight="13.0" prefWidth="92.0" text="Tidsbestillling" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="68.0" layoutX="60.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="68.0" layoutX="57.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="68.0" layoutX="180.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="68.0" layoutX="300.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="68.0" layoutX="420.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="68.0" layoutX="540.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-      <CheckBox layoutX="56.0" layoutY="173.0" mnemonicParsing="false" text="Vælg" />
-      <CheckBox layoutX="531.0" layoutY="173.0" mnemonicParsing="false" text="Vælg" />
-      <CheckBox layoutX="415.0" layoutY="173.0" mnemonicParsing="false" text="Vælg" />
-      <CheckBox layoutX="291.0" layoutY="173.0" mnemonicParsing="false" text="Vælg" />
-      <CheckBox layoutX="176.0" layoutY="173.0" mnemonicParsing="false" text="Vælg" />
+      <CheckBox layoutX="56.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
+      <CheckBox layoutX="531.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
+      <CheckBox layoutX="415.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
+      <CheckBox layoutX="291.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
+      <CheckBox layoutX="176.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
       <VBox layoutX="40.0" layoutY="209.0" prefHeight="52.0" prefWidth="45.0">
          <children>
-            <Button mnemonicParsing="false" text="09:30" />
-            <Button layoutX="10.0" layoutY="87.0" mnemonicParsing="false" text="14:30" />
+            <Button mnemonicParsing="false" onAction="#vælgtid" text="09:30" />
+            <Button layoutX="10.0" layoutY="87.0" mnemonicParsing="false" onAction="#vælgtid" text="14:30" />
          </children>
       </VBox>
       <Button layoutX="275.0" layoutY="324.0" mnemonicParsing="false" text="Book tid" />
       <VBox layoutX="145.0" layoutY="209.0" prefHeight="52.0" prefWidth="45.0">
          <children>
-            <Button mnemonicParsing="false" text="10:30" />
-            <Button layoutX="10.0" layoutY="87.0" mnemonicParsing="false" text="15:30" />
+            <Button mnemonicParsing="false" onAction="#vælgtid" text="10:30" />
+            <Button layoutX="10.0" layoutY="87.0" mnemonicParsing="false" onAction="#vælgtid" text="15:30" />
          </children>
       </VBox>
       <VBox layoutX="260.0" layoutY="209.0" prefHeight="52.0" prefWidth="45.0">
          <children>
-            <Button mnemonicParsing="false" text="11:30" />
-            <Button layoutX="10.0" layoutY="87.0" mnemonicParsing="false" text="16:30" />
+            <Button mnemonicParsing="false" onAction="#vælgtid" text="11:30" />
+            <Button layoutX="10.0" layoutY="87.0" mnemonicParsing="false" onAction="#vælgtid" text="16:30" />
          </children>
       </VBox>
       <VBox layoutX="366.0" layoutY="209.0" prefHeight="52.0" prefWidth="46.0">
          <children>
-            <Button mnemonicParsing="false" text="12:30" />
-            <Button layoutX="10.0" layoutY="87.0" mnemonicParsing="false" text="17:30" />
+            <Button mnemonicParsing="false" onAction="#vælgtid" text="12:30" />
+            <Button layoutX="10.0" layoutY="87.0" mnemonicParsing="false" onAction="#vælgtid" text="17:30" />
          </children>
       </VBox>
       <VBox layoutX="465.0" layoutY="209.0" prefHeight="52.0" prefWidth="45.0">
          <children>
-            <Button mnemonicParsing="false" text="13:30" />
-            <Button layoutX="10.0" layoutY="87.0" mnemonicParsing="false" text="18:30" />
+            <Button mnemonicParsing="false" onAction="#vælgtid" text="13:30" />
+            <Button layoutX="10.0" layoutY="87.0" mnemonicParsing="false" onAction="#vælgtid" text="18:30" />
          </children>
       </VBox>
       <DatePicker layoutX="218.0" layoutY="279.0" />
+      <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="190.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@//C:/Users/benja/Desktop/f6.jpg" />
+         </image></ImageView>
+      <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="300.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@//C:/Users/benja/Desktop/f3.jpg" />
+         </image></ImageView>
+      <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="420.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@//C:/Users/benja/Desktop/f4.jpg" />
+         </image></ImageView>
+      <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="540.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@//C:/Users/benja/Desktop/f5.png" />
+         </image></ImageView>
+      <ImageView fitHeight="86.0" fitWidth="66.0" layoutX="57.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@//C:/Users/benja/Desktop/f2.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

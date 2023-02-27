@@ -25,13 +25,13 @@ public class Main extends Application {
     /*
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LogInd.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 500, 500);
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("tidsbestilling.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 900, 900);
+
         stage.setTitle("Hello bitch!");
         stage.setScene(scene);
         stage.show();
     }
-
     public static void main(String[] args) {
         launch();
 
@@ -40,11 +40,6 @@ public class Main extends Application {
         System.out.println(u1);
 
     }
-
-
-
-     */
-
 
 
 
