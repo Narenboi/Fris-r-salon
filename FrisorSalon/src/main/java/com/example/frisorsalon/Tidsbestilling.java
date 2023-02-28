@@ -2,42 +2,33 @@ package com.example.frisorsalon;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.time.LocalDate;
 
-public class Tidsbestilling {
+public class Tidsbestilling extends DayPicker{
 
+    @FXML private CheckBox frisor1CheckBox;
+    @FXML private CheckBox frisor2CheckBox;
+    @FXML private CheckBox frisor3CheckBox;
 
-    @FXML
-    private CheckBox frisor1CheckBox;
+    @FXML private CheckBox frisor4CheckBox;
 
-    @FXML
-    private CheckBox frisor2CheckBox;
+    @FXML private CheckBox frisor5CheckBox;
 
-    @FXML
-    private CheckBox frisor3CheckBox;
+    @FXML private DatePicker datePicker; // Declare the datePicker variable here
 
-    @FXML
-    private CheckBox frisor4CheckBox;
-
-    @FXML
-    private CheckBox frisor5CheckBox;
-
-    @FXML
-    private DatePicker datePicker; // Declare the datePicker variable here
-
-    @FXML
-    private TextField nameField; // Declare the nameField variable here
+    @FXML private TextField nameField; // Declare the nameField variable here
 
     public Tidsbestilling() {
     }
 
+
+    // current -> newValue
     public void Vaelgfrioer(ActionEvent actionEvent) {
-        if (frisor1CheckBox.isSelected()) {
+       // if (actionEvent.getSource().toString() == "frisor1CheckBox"){
+
+        if (frisor1CheckBox.isSelected()){
             System.out.println("Du har valgt Frisør 1");
         } else if (frisor2CheckBox.isSelected()) {
             System.out.println("Du har valgt Frisør 2");
@@ -70,7 +61,5 @@ public class Tidsbestilling {
         String name = nameField.getText();
         // Her kan du indsætte koden til at bekræfte de tidligere valg
         System.out.println("Reservation bekræftet for");
-
     }
-
 }

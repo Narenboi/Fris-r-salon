@@ -16,9 +16,10 @@ import javax.swing.*;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.*;
 
 
-public class LogInd {
+public class LogInd extends Dbsql{
 
     private Stage stage;
     private Scene scene;
@@ -33,23 +34,29 @@ public class LogInd {
     @FXML
     private Label LoginFailed;
 
+    private Label LoginMSG;
+    private Connection con;
+
     public void LogindKnap(ActionEvent event) throws IOException {
+//        validateLogin();
+        Dbsql db = new Dbsql();
+        db.Sql();
+        //db.validate("nana", "nana1");
 
-        if (username.getText().isBlank() == false && password.getText().isBlank() == false){
-            LoginFailed.setText("logging in bitch!");
-
-        }else {
-            LoginFailed.setText("You fucked up bitch, try again");
+        if (validate(String.valueOf(username), String.valueOf(password)) == true) {
+            root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         }
-
-
+    }
 
 
 
         /*
         StageController.changeScene("hello-view.fxml");
 */
-    }
 
 
 

@@ -33,17 +33,19 @@ public class Redigering extends Tidsbestilling{
         //listener to the toggle group's selectedToggle property to be notified when the selected toggle changes:
         group.selectedToggleProperty().addListener((observable, oldToggle, newToggle) -> {
             if (newToggle != null) {
+
                 // Do something with the selected button text
 
                 // A toggle button has been selected
                 ToggleButton selectedButton = (ToggleButton) newToggle;
 
+
             } else {
+
                 // No toggle button is currently selected
 
             }
         });
-
     }
     public void Booking(ActionEvent actionEvent) {
 

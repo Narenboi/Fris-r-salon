@@ -5,21 +5,62 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+
+
+
 import java.io.IOException;
 
 public class Main extends Application {
 
-
     static Stage primaryStage = null;
+
+
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Tidsbestilling.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 500, 500);
+    public void start(Stage primaryStage) throws Exception {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LogInd.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 900, 900);
         primaryStage.setTitle("Hello bitch!");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+
+        DayPicker dayPicker = new DayPicker();
+        dayPicker.setOnAction(event -> {
+            LocalDate selectedDate = dayPicker.getValue();
+            // Call a method in the Main class based on the selected day
+            switch (selectedDate.getDayOfWeek()) {
+                case MONDAY:
+                    handleMonday();
+                    break;
+                case TUESDAY:
+                    handleTuesday();
+                    break;
+                // Add cases for other days of the week
+                default:
+                    break;
+            }
+        });
     }
+        static void handleMonday() {
+            // Do something for Monday
+            System.out.println("Monday");
+        }
+
+        static void handleTuesday() {
+            // Do something for Tuesday
+            System.out.println("Tuesday");
+        }
+
+        // Add methods for other days of the week
+
 }
+
 
 
     /*
