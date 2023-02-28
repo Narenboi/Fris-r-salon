@@ -10,15 +10,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import java.sql.Connection;
+
+import java.sql.*;
 
 import javax.swing.*;
 import java.io.IOException;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 
-public class LogInd {
+public class LogInd extends Dbsql {
 
     private Stage stage;
     private Scene scene;
@@ -31,40 +30,28 @@ public class LogInd {
     @FXML
     private PasswordField password;
     @FXML
-    private Label LoginFailed;
+    private Label LoginMSG;
 
     public void LogindKnap(ActionEvent event) throws IOException {
 
-
-        if (username.getText().isBlank() == false && password.getText().isBlank() == false){
-            LoginFailed.setText("logging in bitch!");
-            validateLogin();
-        }else {
-            LoginFailed.setText("You fucked up bitch, try again");
+        Dbsql db = new Dbsql();
+        db.validate(username, password);
         }
 
-
-
-
-
-        /*
-        StageController.changeScene("hello-view.fxml");
-*/
-    }
-    public void validateLogin(){
+   /* public void validateLogin(){
         Dbsql connectNow = new Dbsql();
         Connection connectionDB = connectNow.getConnection();
-        String verifyLogin = "SELECT count(1) FROM UserAccounts WHERE username = '" + username.getText() + "' AND password = '" + password.getText() + "'";
+        String verifyLogin = "SELECT count(1) FROM Medarbejder WHERE brugernavn = '" + username.getText() + "' AND password = '" + password.getText() + "'";
         try{
             Statement statement = connectionDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
 
-            while(queryResult()){
+            while(queryResult.next()){
                 if (queryResult.getInt(1) ==1){
-                    LoginFailed.setText("Welcome!");
+                    LoginMSG.setText("Welcome!");
 
                 }else {
-                    LoginFailed.setText("Invalid login please try again.");
+                    LoginMSG.setText("Invalid login please try again.");
                 }
             }
         } catch (Exception e){
@@ -75,17 +62,44 @@ public class LogInd {
 
 
 
-    private void checkLogin() throws IOException{
 
-        Main m = new Main();
+        /*
+        StageController.changeScene("hello-view.fxml");
+*/
+
+   /* public LogInd() {
+        // Establish a connection to the database
+        String url = "C:\\Users\\Naren\\Desktop\\FrisørSalon\\Fris-r-salon\\FrisorSalon\\src\\main\\resources\\JDBC-driver_til_MySql";
+        String username = "myusername";
+        String password = "mypassword";
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, username, password);
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean validate(String username, String password) {
+        boolean status = false;
+        try {
+            // Query the database to retrieve the user's record
+            PreparedStatement ps = con.prepareStatement(
+                    "select * from Medarbejder where brugernavn=? and password=?");
+            ps.setString(1, username);
+            ps.setString(2, password);
+
+            ResultSet rs = ps.executeQuery();
+            status = rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return status;
+        */
+
+
+
+
 
     }
 
-    public void BrugerNavn(ActionEvent actionEvent) {
-
-    }
-
-    public void Password(ActionEvent actionEvent) {
-
-    }
-}
