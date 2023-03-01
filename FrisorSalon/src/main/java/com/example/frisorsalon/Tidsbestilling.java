@@ -1,13 +1,18 @@
 package com.example.frisorsalon;
 
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 import java.time.LocalDate;
+
 
 public class Tidsbestilling {
 
@@ -39,18 +44,29 @@ public class Tidsbestilling {
     public void Vaelgfrioer(ActionEvent actionEvent) {
         if (frisor1CheckBox.isSelected()) {
             System.out.println("Du har valgt Frisør 1");
+            // Tilføjer en besked efter at Frisør 1 er valgt
+            System.out.println("Klik på Book-knappen for at fortsætte.");
         } else if (frisor2CheckBox.isSelected()) {
             System.out.println("Du har valgt Frisør 2");
+            // Tilføjer en besked efter at Frisør 2 er valgt
+            System.out.println("Klik på Book-knappen for at fortsætte.");
         } else if (frisor3CheckBox.isSelected()) {
             System.out.println("Du har valgt Frisør 3");
+            // Tilføjer en besked efter at Frisør 3 er valgt
+            System.out.println("Klik på Book-knappen for at fortsætte.");
         } else if (frisor4CheckBox.isSelected()) {
             System.out.println("Du har valgt Frisør 4");
+            // Tilføjer en besked efter at Frisør 4 er valgt
+            System.out.println("Klik på Book-knappen for at fortsætte.");
         } else if (frisor5CheckBox.isSelected()) {
             System.out.println("Du har valgt Frisør 5");
+            // Tilføjer en besked efter at Frisør 5 er valgt
+            System.out.println("Klik på Book-knappen for at fortsætte.");
         } else {
             System.out.println("Du har ikke valgt en frisør endnu.");
         }
     }
+
 
     public void vælgtid(ActionEvent actionEvent) {
         Button clickedButton = (Button) actionEvent.getSource(); // Henter den klikkede knap
@@ -61,7 +77,7 @@ public class Tidsbestilling {
         }
 
         clickedButton.setDisable(true); // Deaktiverer den klikkede knap
-        System.out.println("Tidspunktet " + clickedButton.getText() + " er nu valgt."); // Udskriver en besked om, at tidspunktet er valgt
+        System.out.println("Din tid " + clickedButton.getText() + " er nu booked."); // Udskriver en besked om, at tidspunktet er valgt
     }
 
     @FXML
@@ -72,5 +88,4 @@ public class Tidsbestilling {
         System.out.println("Reservation bekræftet for");
 
     }
-
 }

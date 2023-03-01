@@ -13,11 +13,11 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="68.0" layoutX="300.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="68.0" layoutX="420.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="68.0" layoutX="540.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-      <CheckBox layoutX="56.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
-      <CheckBox layoutX="531.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
-      <CheckBox layoutX="415.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
-      <CheckBox layoutX="291.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
-      <CheckBox layoutX="176.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
+      <CheckBox layoutX="56.0" layoutY="173.0" mnemonicParsing="false"  text="Vælg"   />
+      <CheckBox layoutX="531.0" layoutY="173.0" mnemonicParsing="false"  text="Vælg" />
+      <CheckBox layoutX="415.0" layoutY="173.0" mnemonicParsing="false"  text="Vælg" />
+      <CheckBox layoutX="291.0" layoutY="173.0" mnemonicParsing="false"  text="Vælg" />
+      <CheckBox layoutX="176.0" layoutY="173.0" mnemonicParsing="false"  text="Vælg" />
       <VBox layoutX="40.0" layoutY="209.0" prefHeight="52.0" prefWidth="45.0">
          <children>
             <Button mnemonicParsing="false" onAction="#vælgtid" text="09:30" />
@@ -50,25 +50,26 @@
          </children>
       </VBox>
       <DatePicker layoutX="218.0" layoutY="279.0" />
-      <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="190.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="122.0" fitWidth="99.0" layoutX="177.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
          <image>
-
+            <Image url="@../../../billeder/f4.jpg" />
          </image></ImageView>
       <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="300.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
          <image>
-
+            <Image url="@../../../billeder/f3.jpg" />
          </image></ImageView>
-      <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="420.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="103.0" fitWidth="92.0" layoutX="417.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
          <image>
-
+            <Image url="@../../../billeder/f6.jpg" />
          </image></ImageView>
-      <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="540.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="76.0" fitWidth="99.0" layoutX="511.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
          <image>
-
-         </image></ImageView>
-      <ImageView fitHeight="86.0" fitWidth="66.0" layoutX="57.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../../billeder/f2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="76.0" fitWidth="74.0" layoutX="53.0" layoutY="95.0">
          <image>
-
+            <Image url="@../../../billeder/f1.jpeg" />
          </image>
       </ImageView>
    </children>
