@@ -2,6 +2,10 @@ package com.example.frisorsalon;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
@@ -9,13 +13,23 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
-public class Redigering extends Tidsbestilling{
-    @FXML ToggleButton setTime0930 = new ToggleButton("09:30"); @FXML ToggleButton setTime1030 = new ToggleButton("10:30");
-    @FXML ToggleButton setTime1130 = new ToggleButton("11:30"); @FXML ToggleButton setTime1230 = new ToggleButton("12:30");
-    @FXML ToggleButton setTime1330 = new ToggleButton("13:30"); @FXML ToggleButton setTime1430 = new ToggleButton("14:30");
-    @FXML ToggleButton setTime1530 = new ToggleButton("15:30"); @FXML ToggleButton setTime1630 = new ToggleButton("16:30");
-    @FXML ToggleButton setTime1730 = new ToggleButton("17:30"); @FXML ToggleButton setTime1830 = new ToggleButton("18:30");
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.Objects;
+
+public class Redigering extends Tidsbestilling {
+    //For at kunne ændre scene
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+    @FXML private DatePicker datePicker; // Declare the datePicker variable here
+    @FXML ToggleButton setTime0930 = new ToggleButton("t0930"); @FXML ToggleButton setTime1030 = new ToggleButton("t1030");
+    @FXML ToggleButton setTime1130 = new ToggleButton("t1130"); @FXML ToggleButton setTime1230 = new ToggleButton("t1230");
+    @FXML ToggleButton setTime1330 = new ToggleButton("t1330"); @FXML ToggleButton setTime1430 = new ToggleButton("t1430");
+    @FXML ToggleButton setTime1530 = new ToggleButton("t1530"); @FXML ToggleButton setTime1630 = new ToggleButton("t1630");
+    @FXML ToggleButton setTime1730 = new ToggleButton("t1730"); @FXML ToggleButton setTime1830 = new ToggleButton("t1830");
 
     public void redigereTid(ActionEvent actionEvent) {
 
@@ -45,7 +59,26 @@ public class Redigering extends Tidsbestilling{
         });
 
     }
-    public void Booking(ActionEvent actionEvent) {
+    @FXML private void handleBookButtonAction(ActionEvent event) {
+        LocalDate selectedDate = datePicker.getValue();
 
+        // Her kan du indsætte koden til at bekræfte de tidligere valg
+        System.out.println("Reservation bekræftet for " + selectedDate);
+    }
+
+    public void Booking(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Forside.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void AflysTid(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Forside.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

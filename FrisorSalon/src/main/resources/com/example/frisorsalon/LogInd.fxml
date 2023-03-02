@@ -7,10 +7,10 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frisorsalon.LogInd">
    <children>
       <Button fx:id="LogindKnap" layoutX="293.0" layoutY="238.0" mnemonicParsing="false" onAction="#LogindKnap" prefHeight="25.0" prefWidth="82.0" text="Log Ind" />
-      <PasswordField fx:id="password" layoutX="226.0" layoutY="200.0" onAction="#Password" promptText="Password" />
-      <TextField fx:id="username" layoutX="226.0" layoutY="159.0" onAction="#BrugerNavn" promptText="Brugernavn" />
+      <PasswordField fx:id="PPassword" layoutX="226.0" layoutY="200.0" promptText="Password" />
+      <TextField fx:id="UUsername" layoutX="226.0" layoutY="159.0" promptText="Brugernavn" />
       <Label layoutX="168.0" layoutY="204.0" text="Password" />
-      <Label layoutX="99.0" layoutY="163.0" text="Medarbejder Nummer" />
+      <Label layoutX="158.0" layoutY="163.0" prefHeight="17.0" prefWidth="64.0" text="Brugernavn" />
       <Label layoutX="168.0" layoutY="24.0" prefHeight="48.0" prefWidth="237.0" text="Harmonikas Frisør Salon">
          <font>
             <Font size="20.0" />
