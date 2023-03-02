@@ -1,16 +1,69 @@
 package com.example.frisorsalon;
+
+import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.sql.*;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.sql.*;
+
+import javax.swing.*;
+import java.io.IOException;
+
 
 public class Dbsql {
     public Connection databaseLink;
-
-    private Connection con;
+    private Connection conn;
     private Connection connection;
     private Statement stmt;
     private Statement stmt1;
+
+        String connectString = "jdbc:mysql://eu-central.connect.psdb.cloud/harmonika?sslMode=VERIFY_IDENTITY";
+        String userName = "fayleayqr2xop0tncwwh";
+        String passWord = "pscale_pw_ln9EwoSa51WxRyfs6dcz9sPYCvPydEyNvwiHWYSi2eB";
+
+
+        public void Sql() {
+            try {
+                Connection connection = DriverManager.getConnection(this.connectString, this.userName, this.passWord);
+
+                if (connection == null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                throw new IllegalStateException("Cannot connect the database!", e);
+            }
+        }
+
+    public boolean validate(String UUsername, String PPassword) {
+        boolean status = false;
+        try {
+            // Query the database to retrieve the user's record
+            Connection connection = DriverManager.getConnection(this.connectString, this.userName, this.passWord);
+            PreparedStatement ps = connection.prepareStatement("select * from medarbejder where brugernavn=? and password=?");
+            ps.setString(1, (UUsername));
+            ps.setString(2, (PPassword));
+
+            ResultSet rs = ps.executeQuery();
+            status = rs.next();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return status;
+    }
+    }
 
 /*
     Dbsql() {
@@ -72,14 +125,14 @@ public class Dbsql {
 
     */
 
-    public Dbsql() {
+  /*  public Dbsql() {
         // Establish a connection to the database
-        String url = "C:\\Users\\Naren\\Desktop\\FrisørSalon\\Fris-r-salon\\FrisorSalon\\src\\main\\resources\\JDBC-driver_til_MySql";
-        String username = "myusername";
-        String password = "mypassword";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(url, username, password);
+            Connection conn = DriverManager.getConnection(
+                    "jdbc:mysql://eu-central.connect.psdb.cloud/harmonika?sslMode=VERIFY_IDENTITY",
+                    "nbb3rgarpob8kxfunlrp",
+                    "pscale_pw_8RrTxiek2QWmtHq31RZveZPurBTZaIVKWZ6ICScFYB8");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
@@ -87,11 +140,11 @@ public class Dbsql {
 
 
 
-    public boolean validate(TextField brugernavn, PasswordField password) {
+    public boolean validate(String brugernavn, String password) {
         boolean status = false;
         try {
             // Query the database to retrieve the user's record
-            PreparedStatement ps = con.prepareStatement(
+            PreparedStatement ps = conn.prepareStatement(
                     "select * from Medarbejder where brugernavn=? and password=?");
             ps.setString(1, String.valueOf(brugernavn));
             ps.setString(2, String.valueOf(password));
@@ -103,7 +156,9 @@ public class Dbsql {
         }
         return status;
     }
-}
+
+   */
+
 
 
 

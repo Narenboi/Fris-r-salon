@@ -13,8 +13,8 @@ import javafx.stage.Stage;
 
 import java.sql.*;
 
-import javax.swing.*;
 import java.io.IOException;
+import java.util.Objects;
 
 
 public class LogInd extends Dbsql {
@@ -26,17 +26,32 @@ public class LogInd extends Dbsql {
     @FXML
     private Label welcomeText;
     @FXML
-    private TextField username;
+    public TextField UUsername;
     @FXML
-    private PasswordField password;
+    public PasswordField PPassword;
     @FXML
     private Label LoginMSG;
 
-    public void LogindKnap(ActionEvent event) throws IOException {
 
+
+    public void LogindKnap(ActionEvent event) throws IOException {
+        //validateLogin();
         Dbsql db = new Dbsql();
-        db.validate(username, password);
+        db.Sql();
+        //db.validate("nana", "nana1");
+
+        if (validate(String.valueOf((UUsername)), String.valueOf(PPassword))) {
+            System.out.println("You have been logged in");
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } else {
+            System.out.println("try again");
+
         }
+    }
 
    /* public void validateLogin(){
         Dbsql connectNow = new Dbsql();

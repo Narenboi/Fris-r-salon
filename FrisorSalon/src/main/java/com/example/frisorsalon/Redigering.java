@@ -11,11 +11,11 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
 public class Redigering extends Tidsbestilling{
-    @FXML ToggleButton setTime0930 = new ToggleButton("09:30"); @FXML ToggleButton setTime1030 = new ToggleButton("10:30");
-    @FXML ToggleButton setTime1130 = new ToggleButton("11:30"); @FXML ToggleButton setTime1230 = new ToggleButton("12:30");
-    @FXML ToggleButton setTime1330 = new ToggleButton("13:30"); @FXML ToggleButton setTime1430 = new ToggleButton("14:30");
-    @FXML ToggleButton setTime1530 = new ToggleButton("15:30"); @FXML ToggleButton setTime1630 = new ToggleButton("16:30");
-    @FXML ToggleButton setTime1730 = new ToggleButton("17:30"); @FXML ToggleButton setTime1830 = new ToggleButton("18:30");
+    @FXML ToggleButton setTime0930 = new ToggleButton("t0930"); @FXML ToggleButton setTime1030 = new ToggleButton("t1030");
+    @FXML ToggleButton setTime1130 = new ToggleButton("t1130"); @FXML ToggleButton setTime1230 = new ToggleButton("t1230");
+    @FXML ToggleButton setTime1330 = new ToggleButton("t1330"); @FXML ToggleButton setTime1430 = new ToggleButton("t1430");
+    @FXML ToggleButton setTime1530 = new ToggleButton("t1530"); @FXML ToggleButton setTime1630 = new ToggleButton("t1630");
+    @FXML ToggleButton setTime1730 = new ToggleButton("t1730"); @FXML ToggleButton setTime1830 = new ToggleButton("t1830");
 
     public void redigereTid(ActionEvent actionEvent) {
 

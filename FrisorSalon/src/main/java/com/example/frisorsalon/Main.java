@@ -15,7 +15,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("logind.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 900, 900);
-        primaryStage.setTitle("Hello bitch!");
+        primaryStage.setTitle("Er der mon nogen der læser denne tekst???");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
