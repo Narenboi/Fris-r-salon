@@ -13,7 +13,7 @@ public class Main extends Application {
     static Stage primaryStage = null;
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("logind.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Forside.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 900, 900);
         primaryStage.setTitle("Er der mon nogen der læser denne tekst???");
         primaryStage.setScene(scene);

@@ -2,14 +2,26 @@ package com.example.frisorsalon;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Tidsbestilling {
+
+    //For at kunne ændre scene
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     //Vælger hvilken frisør du vil bestille tid hos
     @FXML private CheckBox Frisor1;
@@ -78,10 +90,6 @@ public class Tidsbestilling {
             Frisor2.setSelected(false);
             Frisor3.setSelected(false);
             Frisor4.setSelected(false);
-
-
-        } else {
-            System.out.println("Du har ikke valgt en frisør endnu.");
         }
     }
 
@@ -102,5 +110,14 @@ public class Tidsbestilling {
 
         // Her kan du indsætte koden til at bekræfte de tidligere valg
         System.out.println("Reservation bekræftet for " + selectedDate);
+    }
+
+    public void Fortryd(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Forside.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
     }
 }

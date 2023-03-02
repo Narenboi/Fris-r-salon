@@ -12,18 +12,18 @@
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="68.0" layoutX="300.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="68.0" layoutX="420.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="68.0" layoutX="540.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" width="66.0" />
-        <CheckBox fx:id="frisør1" layoutX="56.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
-        <CheckBox fx:id="frisør5" layoutX="531.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
-        <CheckBox fx:id="frisør4" layoutX="415.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
-        <CheckBox fx:id="frisør3" layoutX="291.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
-        <CheckBox fx:id="frisør2" layoutX="176.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
+        <CheckBox fx:id="frisør1" layoutX="56.0" layoutY="173.0" mnemonicParsing="false" text="Vælg" />
+        <CheckBox fx:id="frisør5" layoutX="531.0" layoutY="173.0" mnemonicParsing="false" text="Vælg" />
+        <CheckBox fx:id="frisør4" layoutX="415.0" layoutY="173.0" mnemonicParsing="false" text="Vælg" />
+        <CheckBox fx:id="frisør3" layoutX="291.0" layoutY="173.0" mnemonicParsing="false" text="Vælg" />
+        <CheckBox fx:id="frisør2" layoutX="176.0" layoutY="173.0" mnemonicParsing="false" text="Vælg" />
         <VBox layoutX="40.0" layoutY="209.0" prefHeight="86.0" prefWidth="49.0">
             <children>
                 <ToggleButton fx:id="setTime0930" mnemonicParsing="false" onAction="#redigereTid" text="09:30" />
                 <ToggleButton fx:id="setTime1430" layoutX="10.0" layoutY="87.0" mnemonicParsing="false" onAction="#redigereTid" text="14:30" />
             </children>
         </VBox>
-        <Button fx:id="bookTid" layoutX="275.0" layoutY="324.0" mnemonicParsing="false" onAction="#Booking" text="Book tid" />
+        <Button fx:id="bookTid" layoutX="275.0" layoutY="324.0" mnemonicParsing="false" onAction="#Booking" prefHeight="25.0" prefWidth="61.0" text="Book tid" />
         <VBox layoutX="145.0" layoutY="209.0" prefHeight="52.0" prefWidth="45.0">
             <children>
                 <ToggleButton fx:id="setTime1030" mnemonicParsing="false" onAction="#redigereTid" text="10:30" />
@@ -48,6 +48,7 @@
                 <ToggleButton fx:id="setTime1830" layoutX="10.0" layoutY="87.0" mnemonicParsing="false" onAction="#redigereTid" text="18:30" />
             </children>
         </VBox>
-        <DatePicker layoutX="218.0" layoutY="279.0" />
+        <DatePicker fx:id="datePicker" layoutX="218.0" layoutY="279.0" onAction="#handleBookButtonAction" promptText="Vælg dato" />
+      <Button fx:id="Aflys" layoutX="275.0" layoutY="355.0" mnemonicParsing="false" onAction="#AflysTid" prefWidth="61.0" text="Aflys tid" />
     </children>
 </AnchorPane>

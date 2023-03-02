@@ -11,60 +11,6 @@ public class Kvittering extends Tidsbestilling {
 
     private Integer kvitID;
     private String dato;
-    private String tidspunkt;
-    private String kfnavn;
-    private String kenavn;
-    private Integer mnr;
-
-
-
-    public void indsaetKvittering(kvittering k) {
-        try {
-            String sql = "INSERT INTO kvittering (kvitID, dato, tidspunkt, kfnavn, kenavn, mnr) VALUES('" +
-                    k.getKvitID() + "','" + k.getDato() + "','";
-            sql = sql + k.getTidspunkt() + "','" + k.getKfnavn() + "','" + k.getKenavn() + "','" + k.getMnr() + "')";
-            Statement stmt = connection.createStatement();
-            stmt.execute(sql);
-            System.out.println("Connection to SQLite has been established.");
-            stmt.close();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-    }
-
-    public kvittering alleoplysninger() {
-        // String sql = "SELECT * from studerende left join studfag on studerende.stdnr=studfag.stdnr left join fag on studfag.fagnr=fag.fagnr order by stdnr";
-        String sql = "select * from kvittering";
-        try {
-            Statement stmt = connection.createStatement();
-            Statement stmt1 = connection.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                kvittering k = new kvittering();
-                int nr = rs.getInt("kvitID");
-                k.setKvitID(nr);
-                k.setDato(rs.getString("dato"));
-                k.setTidspunkt(rs.getString("tidspunkt"));
-                k.setKfnavn(rs.getString("kfnavn"));
-                k.setKenavn(rs.getString("kenavn"));
-                k.setMnr(rs.getInt("mnr"));
-                String sql1 = "SELECT * from kvittering left join tidsbestilling on kvittering.kvitID=tidsbestilling.mnr where kvitID.mnr=" + nr;
-                ResultSet rs1 = stmt1.executeQuery(sql1);
-                //while (rs1.next()) {
-                //kvittering kvit = new kvittering();
-                //k..add(kvit);
-                //}
-                tabel.add(k);
-            }
-            stmt.close();
-            stmt1.close();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return tabel;
-    }
-
-
 
     public Integer getKvitID() {
         return kvitID;
@@ -113,6 +59,15 @@ public class Kvittering extends Tidsbestilling {
     public void setMnr(Integer mnr) {
         this.mnr = mnr;
     }
+
+    private String tidspunkt;
+    private String kfnavn;
+    private String kenavn;
+    private Integer mnr;
+
+
+
+
 }
 
 

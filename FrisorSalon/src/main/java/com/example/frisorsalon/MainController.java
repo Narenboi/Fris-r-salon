@@ -9,7 +9,7 @@ public class MainController {
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application bitch!");
+        welcomeText.setText("Welcome to JavaFX Application!");
     }
 
 

@@ -18,9 +18,9 @@
       <CheckBox fx:id="Frisor4" layoutX="415.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
       <CheckBox fx:id="Frisor3" layoutX="291.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
       <CheckBox fx:id="Frisor2" layoutX="176.0" layoutY="173.0" mnemonicParsing="false" onAction="#Vaelgfrioer" text="Vælg" />
-      <TextField fx:id="mnr" layoutX="46.0" layoutY="280.0" prefHeight="25.0" prefWidth="150.0" promptText="MedarbejderNummer"/>
-      <TextField fx:id="kundeen" layoutX="46.0" layoutY="320.0" prefHeight="25.0" prefWidth="150.0" promptText="KundeEfternavn"/>
-      <TextField fx:id="kundefn" layoutX="46.0" layoutY="360.0" prefHeight="25.0" prefWidth="150.0" promptText="KundeFornavn"/>
+      <TextField fx:id="mnr" layoutX="46.0" layoutY="280.0" prefHeight="25.0" prefWidth="150.0" promptText="MedarbejderNummer" />
+      <TextField fx:id="kundeen" layoutX="46.0" layoutY="320.0" prefHeight="25.0" prefWidth="150.0" promptText="KundeEfternavn" />
+      <TextField fx:id="kundefn" layoutX="46.0" layoutY="360.0" prefHeight="25.0" prefWidth="150.0" promptText="KundeFornavn" />
       <VBox layoutX="40.0" layoutY="209.0" prefHeight="52.0" prefWidth="45.0">
          <children>
             <Button fx:id="t0930" mnemonicParsing="false" onAction="#vælgtid" text="09:30" />
@@ -52,7 +52,7 @@
             <Button fx:id="t1830" layoutX="10.0" layoutY="87.0" mnemonicParsing="false" onAction="#vælgtid" text="18:30" />
          </children>
       </VBox>
-      <DatePicker fx:id="datePicker" layoutX="218.0" layoutY="279.0" onAction="#handleBookButtonAction" promptText="Vælg dato"/>
+      <DatePicker fx:id="datePicker" layoutX="218.0" layoutY="279.0" onAction="#handleBookButtonAction" promptText="Vælg dato" />
       <ImageView fitHeight="68.0" fitWidth="66.0" layoutX="190.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
          <image>
 
@@ -74,5 +74,6 @@
 
          </image>
       </ImageView>
+      <Button fx:id="Fortryd" layoutX="274.0" layoutY="360.0" mnemonicParsing="false" onAction="#Fortryd" prefHeight="25.0" prefWidth="61.0" text="Fortryd" />
    </children>
 </AnchorPane>

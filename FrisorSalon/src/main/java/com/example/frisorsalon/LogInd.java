@@ -18,7 +18,7 @@ import java.util.Objects;
 
 
 public class LogInd extends Dbsql {
-
+    //For at kunne ændre scene
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -31,7 +31,6 @@ public class LogInd extends Dbsql {
     public PasswordField PPassword;
     @FXML
     private Label LoginMSG;
-
 
 
     public void LogindKnap(ActionEvent event) throws IOException {
@@ -53,7 +52,7 @@ public class LogInd extends Dbsql {
         }
     }
 
-   /* public void validateLogin(){
+    /* public void validateLogin(){
         Dbsql connectNow = new Dbsql();
         Connection connectionDB = connectNow.getConnection();
         String verifyLogin = "SELECT count(1) FROM Medarbejder WHERE brugernavn = '" + username.getText() + "' AND password = '" + password.getText() + "'";

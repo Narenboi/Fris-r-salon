@@ -20,6 +20,7 @@ import java.sql.*;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class Dbsql {
@@ -63,6 +64,49 @@ public class Dbsql {
         }
         return status;
     }
+
+    public void indsaetKvittering(Kvittering k) {
+        try {
+            String sql = "INSERT INTO kvittering (kvitID, dato, tidspunkt, kfnavn, kenavn, mnr) VALUES('" + k.getKvitID() + "','" + k.getDato() + "','" + k.getTidspunkt() + "','" + k.getKfnavn() + "','" + k.getKenavn() + "','" + k.getMnr() + "')";
+            Statement stmt = connection.createStatement();
+            stmt.execute(sql);
+            System.out.println("Connection to SQLite has been established.");
+            stmt.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public Kvittering alleoplysninger() {
+        String sql = "select * from kvittering";
+        try {
+            Statement stmt = connection.createStatement();
+            Statement stmt1 = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                Kvittering k = new Kvittering();
+                int nr = rs.getInt("kvitID");
+                k.setKvitID(nr);
+                k.setDato(rs.getString("dato"));
+                k.setTidspunkt(rs.getString("tidspunkt"));
+                k.setKfnavn(rs.getString("kfnavn"));
+                k.setKenavn(rs.getString("kenavn"));
+                k.setMnr(rs.getInt("mnr"));
+                String sql1 = "SELECT * from kvittering left join tidsbestilling on kvittering.kvitID=tidsbestilling.mnr where kvitID.mnr=" + nr;
+                ResultSet rs1 = stmt1.executeQuery(sql1);
+                //while (rs1.next()) {
+                //kvittering kvit = new kvittering();
+                //k..add(kvit);
+                //}
+            }
+            stmt.close();
+            stmt1.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return alleoplysninger();
+    }
+
     }
 
 /*
